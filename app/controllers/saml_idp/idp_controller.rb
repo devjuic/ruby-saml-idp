@@ -24,12 +24,12 @@ module SamlIdp
           return
         end
       end
-      render :template => "saml_idp/idp/new"
+      render :template => "saml_idp/idp/new" unless @redirect_path.present?
     end
 
     protected
 
-      def idp_authenticate(email, password)
+      def idp_authenticate(username, password)
         raise "Not implemented"
       end
 
